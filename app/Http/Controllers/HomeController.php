@@ -38,7 +38,8 @@ class HomeController extends Controller
 	 */
 	public function index()
 	{
-		$products = Product::popular()->get();
+    // $products = Product::popular()->get(); get popular product
+    $products = Product::all();
 		$this->data['products'] = $products;
 
 		$slides = Slide::active()->orderBy('position', 'ASC')->get();
